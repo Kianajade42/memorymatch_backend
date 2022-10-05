@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
 def index
-    @users = User.most_recent
+    # @users = User.most_recent
+    @users= User.all
     render json: @users, only: [:username]
 end
 
@@ -12,7 +13,6 @@ end
 def show
     @user = User.find(params[:id])
     render json: @user
-
 end
 
   private
